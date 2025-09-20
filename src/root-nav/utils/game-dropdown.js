@@ -1,4 +1,4 @@
-import {NavDropdown} from "react-bootstrap";
+import {Nav, NavDropdown} from "react-bootstrap";
 import {useState} from "react";
 import styled from "styled-components";
 
@@ -9,11 +9,11 @@ const DropdownWrapper = styled.div`
 const GameDropdown = ({title, children}) => {
     const [shown, setShown] = useState(false);
 
-    const show = (e) => {
+    const show = () => {
         setShown(true);
     }
 
-    const hide = (e) => {
+    const hide = () => {
         setShown(false);
     }
 
@@ -27,15 +27,18 @@ const GameDropdown = ({title, children}) => {
             onMouseEnter={show}
             onMouseLeave={hide}
         >
-            <NavDropdown
-                id={'basic-dropdown'}
-                align={'end'}
-                title={title}
-                show={shown}
-                onClick={goToPage}
-            >
-                {children}
-            </NavDropdown>
+            <Nav>
+                <NavDropdown
+                    id={'basic-dropdown'}
+                    menuVariant={'dark'}
+                    align={'end'}
+                    title={title}
+                    show={shown}
+                    onClick={goToPage}
+                >
+                    {children}
+                </NavDropdown>
+            </Nav>
         </DropdownWrapper>
     )
 }

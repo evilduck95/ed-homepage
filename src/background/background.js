@@ -25,9 +25,10 @@ const DuckContainer = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 100vh;
+  height: 110vh;
   width: 100vw;
   display: flex;
+  z-index: -1;
 `;
 
 const DuckGrid = styled.div`
@@ -50,12 +51,14 @@ const ColoredSquare = styled.div`
   background-color: ${props => props.backgroundColor};
   opacity: .25;
   //z-index: 10;
+  transition: opacity 500ms;
   &:hover {
-    opacity: 1;
+    transition-duration: 100ms;
+    opacity: .5;
   }
 `;
 
-const Home = () => {
+const Background = () => {
     return (
         <DuckContainer>
             <DuckGrid backgroundSizeMultiplier={4}>
@@ -70,6 +73,7 @@ const Home = () => {
                                 backgroundColor={pixel === '#000000' ? '' : pixel}
                                 pixelsInRow={row.length}
                                 pixelsInColumn={duckData.length}
+                                onMouseOver={() => console.log("Mouse")}
                             />
                         )}
                     </ColoredSquaresRow>
@@ -79,4 +83,4 @@ const Home = () => {
     )
 }
 
-export default Home;
+export default Background;

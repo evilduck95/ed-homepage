@@ -3,8 +3,8 @@ import GameDropdown from "./utils/game-dropdown";
 
 const RootNav = () => {
     return (
-        <Navbar expand={'lg'} className={'navbar navbar-expand-sm bg-dark navbar-dark fixed-top'}>
-            <Container>
+        <Navbar variant={'dark'} bg={'dark'} expand={'lg'}>
+            <Container fluid>
                 <Navbar.Brand href={'/'}>ED Games</Navbar.Brand>
                 <Navbar.Collapse id={'basic-navbar-nav'}>
                     <Nav className={'me-auto'}>
