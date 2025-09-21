@@ -40,13 +40,13 @@ const InfoSection = styled.div`
   cursor: ${props => props.clickable ? 'pointer' : 'auto'};
 `
 
-const Footer = () => {
+const Footer = ({mouseInCallback, mouseOutCallback}) => {
     const scrollToTop = () => {
         window.scrollTo(0, 0)
     }
 
     return (
-        <RootContainer>
+        <RootContainer onMouseEnter={mouseInCallback} onMouseLeave={mouseOutCallback}>
             <Top>
                 <h4>Evil Duck Games</h4>
             </Top>

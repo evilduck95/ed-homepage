@@ -48,7 +48,7 @@ const ColoredSquare = styled.div`
   height: 100%;
   width: 100%;
   background-color: ${props => props.backgroundColor};
-  opacity: ${props => props.highlighted ? .5 : .25};
+  opacity: ${props => props.highlighted ? .75 : .25};
   transition: background-color 500ms, opacity 200ms;
   &:hover {
     transition-duration: 100ms;

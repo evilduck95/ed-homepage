@@ -23,6 +23,8 @@ const ContentWrapper = styled.div`
   text-align: justify;
   color: white;
   font-size: large;
+  opacity: ${props => props.dimmed ? .5 : 1};
+  transition: opacity 1000ms;
 `;
 
 function App() {
@@ -38,9 +40,12 @@ function App() {
 
     return (
         <Router>
-            <RootNav mouseInCallback={mouseOverNavbar} mouseOutCallback={mouseLeftNavbar}/>
+            <RootNav
+                mouseInCallback={mouseOverNavbar}
+                mouseOutCallback={mouseLeftNavbar}
+            />
             <ContentFooterWrapper>
-                <ContentWrapper>
+                <ContentWrapper dimmed={highlightBackground}>
                     <Routes>
                         <Route path={'/'} element={<Home/>}/>
                         <Route path={'/about'} element={<About/>}/>
@@ -51,7 +56,10 @@ function App() {
                         <Route path={'*'} element={<Navigate to={'/'}/>}/>
                     </Routes>
                 </ContentWrapper>
-                <Footer/>
+                <Footer
+                    mouseInCallback={mouseOverNavbar}
+                    mouseOutCallback={mouseLeftNavbar}
+                />
             </ContentFooterWrapper>
             <Background highlight={highlightBackground}/>
         </Router>
