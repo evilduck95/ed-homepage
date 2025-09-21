@@ -47,10 +47,8 @@ const ColoredSquaresRow = styled.div`
 const ColoredSquare = styled.div`
   height: 100%;
   width: 100%;
-  //border: black 1px dashed;
   background-color: ${props => props.backgroundColor};
   opacity: ${props => props.highlighted ? .5 : .25};
-  //z-index: 10;
   transition: background-color 500ms, opacity 200ms;
   &:hover {
     transition-duration: 100ms;

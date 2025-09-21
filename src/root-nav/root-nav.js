@@ -9,6 +9,7 @@ const RootNav = ({mouseInCallback, mouseOutCallback}) => {
             expand={'lg'}
             onMouseEnter={mouseInCallback}
             onMouseLeave={mouseOutCallback}
+            fixed={'top'}
         >
             <Container fluid>
                 <Navbar.Brand href={'/'}>ED Games</Navbar.Brand>
