@@ -1,9 +1,15 @@
 import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
 import GameDropdown from "./utils/game-dropdown";
 
-const RootNav = () => {
+const RootNav = ({mouseInCallback, mouseOutCallback}) => {
     return (
-        <Navbar variant={'dark'} bg={'dark'} expand={'lg'}>
+        <Navbar
+            variant={'dark'}
+            bg={'dark'}
+            expand={'lg'}
+            onMouseEnter={mouseInCallback}
+            onMouseLeave={mouseOutCallback}
+        >
             <Container fluid>
                 <Navbar.Brand href={'/'}>ED Games</Navbar.Brand>
                 <Navbar.Collapse id={'basic-navbar-nav'}>
