@@ -11,7 +11,7 @@ const RootContainer = styled.div`
 const Top = styled.div`
   background-color: #ea8e26;
   text-align: center;
-  padding: 5px 50px 0 0;
+  padding: 5px 50px 0;
 `
 
 const Bottom = styled.div`

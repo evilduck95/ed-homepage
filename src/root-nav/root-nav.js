@@ -14,7 +14,13 @@ const RootNav = ({mouseInCallback, mouseOutCallback}) => {
             fixed={'top'}
         >
             <Container fluid>
-                <Navbar.Brand href={'/'}>ED Games</Navbar.Brand>
+                <Navbar.Brand href={'/'}>
+                    <img
+                        src={'logo192.png'}
+                        height={50}
+                     alt={'logo'}/>&nbsp;
+                    EvilDuck Games
+                </Navbar.Brand>
                 <Navbar.Collapse id={'basic-navbar-nav'}>
                     <Nav className={'me-auto'}>
                         <Nav.Link href={'/about'}>About</Nav.Link>
