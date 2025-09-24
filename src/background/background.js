@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+import * as styleGlobals from '../utils/style-vars'
+import {useEffect, useState} from "react";
+
 const duckData = [
     ['#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000'],
     ['#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#a91b1b', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000'],
@@ -29,6 +32,9 @@ const DuckContainer = styled.div`
   width: 100vw;
   display: flex;
   z-index: -1;
+  // @media only screen and (max-width: ${styleGlobals.TOUCHSCREEN_MAX_WIDTH}) {
+  //   height: 50vh;
+  // }
 `;
 
 const DuckGrid = styled.div`
@@ -57,9 +63,25 @@ const ColoredSquare = styled.div`
 `;
 
 const Background = ({highlight}) => {
+    const [sizeMultiplier, setSizeMultiplier] = useState(1);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth > 800) {
+                setSizeMultiplier(4)
+            } else if (window.innerWidth > 400) {
+                setSizeMultiplier(2)
+            } else {
+                setSizeMultiplier(1)
+            }
+        }
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     return (
         <DuckContainer>
-            <DuckGrid backgroundSizeMultiplier={4}>
+            <DuckGrid backgroundSizeMultiplier={sizeMultiplier}>
                 {duckData.map(row =>
                     <ColoredSquaresRow
                         columns={row.length}
