@@ -1,7 +1,31 @@
 import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
-import GameDropdown from "./utils/game-dropdown";
+import GameDropdownPc from "./utils/game-dropdown-pc";
 
 import './root-nav.css';
+import * as styleGlobals from '../utils/style-vars';
+import styled from "styled-components";
+import GameDropdownMobile from "./utils/game-dropdown-mobile";
+
+const PcDropdowns = styled.div`
+  @media only screen and (max-width: ${styleGlobals.TOUCHSCREEN_MAX_WIDTH}) {
+    display: none;
+  }
+`;
+
+const MobileDropdowns = styled.div`
+  @media only screen and (min-width: ${styleGlobals.MOUSESCREEN_MIN_WIDTH}) {
+    display: none;
+  }
+`;
+
+const CozyNavbarSeparator = styled.div`
+  margin-right: auto;
+  height: 1em;
+  border-left: 2px solid #ea8e26;
+  @media only screen and (min-width: 450px){
+    display: none;
+  }
+`;
 
 const RootNav = ({mouseInCallback, mouseOutCallback}) => {
     return (
@@ -18,19 +42,23 @@ const RootNav = ({mouseInCallback, mouseOutCallback}) => {
                     <img
                         src={'logo192.png'}
                         height={50}
-                     alt={'logo'}/>&nbsp;
+                        alt={'logo'}/>&nbsp;
                     EvilDuck Games
                 </Navbar.Brand>
-                <Navbar.Collapse id={'basic-navbar-nav'}>
-                    <Nav className={'me-auto'}>
-                        <Nav.Link href={'/about'}>About</Nav.Link>
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
-            <Container className={'justify-content-end'}>
-                <GameDropdown title={'Ready Set Serve'}>
-                    <NavDropdown.Item href={'/ready-set-serve/privacy-policy'}>Privacy Policy</NavDropdown.Item>
-                </GameDropdown>
+                <Nav className={'me-auto'}>
+                    <Nav.Link href={'/about'}>About</Nav.Link>
+                </Nav>
+                <CozyNavbarSeparator/>
+                <PcDropdowns>
+                    <GameDropdownPc title={'Ready Set Serve'}>
+                        <NavDropdown.Item href={'/ready-set-serve/privacy-policy'}>Privacy Policy</NavDropdown.Item>
+                    </GameDropdownPc>
+                </PcDropdowns>
+                <MobileDropdowns>
+                    <GameDropdownMobile title={'Ready Set Serve'}>
+                        <NavDropdown.Item href={'/ready-set-serve/privacy-policy'}>Privacy Policy</NavDropdown.Item>
+                    </GameDropdownMobile>
+                </MobileDropdowns>
             </Container>
         </Navbar>
     )

@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import {MdKeyboardDoubleArrowUp} from "react-icons/md";
 
+import * as styleGlobals from '../utils/style-vars'
+
 const RootContainer = styled.div`
   bottom: 0;
   width: 100%;
@@ -19,6 +21,12 @@ const Bottom = styled.div`
   justify-content: space-between;
   background-color: #d88120;
   padding: 5px 20vw 10px;
+
+  @media only screen and (max-width: ${styleGlobals.TOUCHSCREEN_MAX_WIDTH}) {
+    flex-direction: column;
+    align-items: center;
+    
+  }
 `
 
 const InfoSection = styled.div`
@@ -26,7 +34,7 @@ const InfoSection = styled.div`
   padding: 5px 15px;
   border-color: #c2751e #e18a2a #e19044;
   border-style: solid;
-  border-width: 5px;
+  border-width: 3px;
   font-size: 15px;
   overflow-wrap: normal;
   text-align: center;
@@ -38,6 +46,12 @@ const InfoSection = styled.div`
   }
 
   cursor: ${props => props.clickable ? 'pointer' : 'auto'};
+  
+  @media only screen and (max-width: ${styleGlobals.TOUCHSCREEN_MAX_WIDTH}) {
+    width: 70vw;
+    border-width: 2px;
+  }
+  
 `
 
 const Footer = ({mouseInCallback, mouseOutCallback}) => {
