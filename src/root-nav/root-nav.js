@@ -50,13 +50,13 @@ const RootNav = ({mouseInCallback, mouseOutCallback}) => {
                 </Nav>
                 <CozyNavbarSeparator/>
                 <PcDropdowns>
-                    <GameDropdownPc title={'Ready Set Serve'}>
-                        <NavDropdown.Item href={'/ready-set-serve/privacy-policy'}>Privacy Policy</NavDropdown.Item>
+                    <GameDropdownPc title={'Fish Pong'}>
+                        <NavDropdown.Item href={'/fish-pong/privacy-policy'}>Privacy Policy</NavDropdown.Item>
                     </GameDropdownPc>
                 </PcDropdowns>
                 <MobileDropdowns>
-                    <GameDropdownMobile title={'Ready Set Serve'}>
-                        <NavDropdown.Item href={'/ready-set-serve/privacy-policy'}>Privacy Policy</NavDropdown.Item>
+                    <GameDropdownMobile title={'Fish Pong'}>
+                        <NavDropdown.Item href={'/fish-pong/privacy-policy'}>Privacy Policy</NavDropdown.Item>
                     </GameDropdownMobile>
                 </MobileDropdowns>
             </Container>
