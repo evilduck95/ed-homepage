@@ -20,7 +20,7 @@ const FishPong = () => {
             <iframe
                 title={'Fish Pong'}
                 id={'fish-pong'}
-                src={'http://localhost:8002'}
+                src={'https://pong.evilduck95.net/'}
             />
         </GameContainer>
     )
