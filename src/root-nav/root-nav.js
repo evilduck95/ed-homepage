@@ -4,7 +4,7 @@ import './root-nav.css';
 import styled from "styled-components";
 
 const RightHandNav = styled.div`
-`;
+`
 
 const CozyNavbarSeparator = styled.div`
   margin-right: auto;
@@ -13,7 +13,7 @@ const CozyNavbarSeparator = styled.div`
   @media only screen and (min-width: 450px) {
     display: none;
   }
-`;
+`
 
 const RootNav = ({mouseInCallback, mouseOutCallback}) => {
     return (

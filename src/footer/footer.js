@@ -59,6 +59,8 @@ const Footer = ({mouseInCallback, mouseOutCallback}) => {
         window.scrollTo(0, 0)
     }
 
+    const pageIsScrollable = window.scrollMaxY > 0
+
     return (
         <RootContainer onMouseEnter={mouseInCallback} onMouseLeave={mouseOutCallback}>
             <Top>
@@ -69,11 +71,11 @@ const Footer = ({mouseInCallback, mouseOutCallback}) => {
                     <a href={'mailto:evilduck95games@gmail.com'}>evilduck95games@gmail.com</a></InfoSection>
                 <InfoSection>Background art created using <a
                     href={'https://www.piskelapp.com/'}>PiskelApp</a></InfoSection>
-                <InfoSection onClick={scrollToTop} clickable={true}>
+                {pageIsScrollable && <InfoSection onClick={scrollToTop} clickable={true}>
                     <MdKeyboardDoubleArrowUp size={'2em'}/>
                     Click to go back to top
                     <MdKeyboardDoubleArrowUp size={'2em'}/>
-                </InfoSection>
+                </InfoSection>}
             </Bottom>
         </RootContainer>
     )

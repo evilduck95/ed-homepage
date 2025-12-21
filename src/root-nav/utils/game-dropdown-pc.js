@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const DropdownWrapper = styled.div`
   padding: 10px 0;
-`;
+`
 
 const GameDropdownPc = ({title, children}) => {
     const [shown, setShown] = useState(false);
@@ -18,7 +18,7 @@ const GameDropdownPc = ({title, children}) => {
     }
 
     const goToPage = () => {
-        window.location.href = `/${title.toLowerCase().replaceAll(' ', '-')}`;
+        window.location.href = `/${title.toLowerCase().replaceAll(' ', '-')}`
     }
 
     return (

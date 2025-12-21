@@ -2,7 +2,7 @@ import {Nav, NavDropdown} from "react-bootstrap";
 import styled from "styled-components";
 
 const DropdownWrapper = styled.div`
-`;
+`
 
 const GameDropdownMobile = ({title, children}) => {
     return (

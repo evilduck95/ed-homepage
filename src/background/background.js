@@ -35,20 +35,20 @@ const DuckContainer = styled.div`
   // @media only screen and (max-width: ${styleGlobals.TOUCHSCREEN_MAX_WIDTH}) {
   //   height: 50vh;
   // }
-`;
+`
 
 const DuckGrid = styled.div`
   width: ${props => props.backgroundSizeMultiplier * 160}px;
   height: ${props => props.backgroundSizeMultiplier * 160}px;
   margin: auto;
-`;
+`
 
 const ColoredSquaresRow = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
   height: 6.25%;
-`;
+`
 
 const ColoredSquare = styled.div`
   height: 100%;
@@ -60,7 +60,7 @@ const ColoredSquare = styled.div`
     transition-duration: 100ms;
     background-color: #e52f2f;
   }
-`;
+`
 
 const Background = ({highlight}) => {
     const [sizeMultiplier, setSizeMultiplier] = useState(1);

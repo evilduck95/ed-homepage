@@ -26,7 +26,7 @@ const ContentWrapper = styled.div`
   font-size: large;
   opacity: ${props => props.dimmed ? .5 : 1};
   transition: opacity 1000ms;
-`;
+`
 
 function App() {
     const [highlightBackground, setHighlightBackground] = useState(false);
