@@ -2,12 +2,13 @@ import Background from "./background/background";
 import {BrowserRouter as Router, Navigate, Route, Routes} from "react-router";
 import RootNav from "./root-nav/root-nav";
 import About from "./about/about";
-import PrivacyPolicy from "./fish-pong/privacy-policy/privacy-policy";
-import FishPong from "./fish-pong/fish-pong";
+import Games from "./games/games"
+import GameFrame from "./game-frame/game-frame";
 import styled from "styled-components";
 import Home from "./home/home";
 import {useState} from "react";
 import Footer from "./footer/footer";
+import DefaultPrivacyPolicy from "./game-frame/privacy-policy/default-privacy-policy";
 
 const ContentFooterWrapper = styled.div`
   flex: 1; // Fill all space below navbar
@@ -49,9 +50,16 @@ function App() {
                     <Routes>
                         <Route path={'/'} element={<Home/>}/>
                         <Route path={'/about'} element={<About/>}/>
+                        <Route path={'/games'} element={<Games/>}/>
                         <Route path={'/fish-pong'}>
-                            <Route index element={<FishPong/>}/>
-                            <Route path={'privacy-policy'} element={<PrivacyPolicy/>}/>
+                            <Route index element={<GameFrame name={'Fish Pong'} id={'fish-pong'}
+                                                             srcUrl={'https://pong.evilduck95.net/'}/>}/>
+                            <Route path={'privacy-policy'} element={<DefaultPrivacyPolicy gameName={'Fish Pong'}/>}/>
+                        </Route>
+                        <Route path={'/jump-demon'}>
+                            <Route index element={<GameFrame name={'Jump Demon'} id={'jump-demon'}
+                                                             srcUrl={'https://jumpdemon.evilduck95.net/'}/>}/>
+                            <Route path={'privacy-policy'} element={<DefaultPrivacyPolicy gameName={'Jump Demon'}/>}/>
                         </Route>
                         <Route path={'*'} element={<Navigate to={'/'}/>}/>
                     </Routes>
