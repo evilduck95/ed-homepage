@@ -32,9 +32,11 @@ const DuckContainer = styled.div`
   width: 100vw;
   display: flex;
   z-index: -1;
-  // @media only screen and (max-width: ${styleGlobals.TOUCHSCREEN_MAX_WIDTH}) {
-  //   height: 50vh;
-  // }
+  @media only screen and (max-width: ${styleGlobals.TOUCHSCREEN_MAX_WIDTH}) {
+    top: unset;
+    left: unset;
+    transform: unset;
+  }
 `
 
 const DuckGrid = styled.div`

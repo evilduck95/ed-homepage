@@ -1,2 +1,2 @@
-export const TOUCHSCREEN_MAX_WIDTH = '800px'
-export const MOUSESCREEN_MIN_WIDTH = '801px'
+export const TOUCHSCREEN_MAX_WIDTH = '1250px'
+export const MOUSESCREEN_MIN_WIDTH = '1251px'

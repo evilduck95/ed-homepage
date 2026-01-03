@@ -2,6 +2,7 @@ import styled from "styled-components";
 import GamePreviewRow from "../game-preview-row/game-preview-row";
 import fishPongImage from "./images/fish-pong.png";
 import jumpDemonImage from "./images/jump-demon.png";
+import * as styleGlobals from "../utils/style-vars";
 
 
 const RootContainer = styled.div`
@@ -17,6 +18,10 @@ const RootContainer = styled.div`
     &:hover {
       opacity: 1;
     }
+  }
+
+  @media only screen and (max-width: ${styleGlobals.TOUCHSCREEN_MAX_WIDTH}) {
+    margin-bottom: 100px;
   }
 
 `
@@ -56,7 +61,7 @@ const Games = () => {
             <PageDescription>
                 This page consists of a series of very small games I've been making in the Godot game engine.
                 The <a target={'_blank'} rel={'noopener noreferrer'} href={'https://20_games_challenge.gitlab.io/'}>20
-                Games Challenge</a>
+                Games Challenge</a>&nbsp;
                 provides the broad structure and jumping off points for these games.
                 <br/>
                 <br/>
